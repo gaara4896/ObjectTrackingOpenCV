@@ -10,7 +10,7 @@ def update(frame):
     gray = cv2.GaussianBlur(gray, (21, 21), 0)
     previousFrames.put(gray)
     
-    if previousFrames.qsize() < 15:
+    if previousFrames.qsize() < 5:
         return frame
     
     previousFrame = previousFrames.get()
