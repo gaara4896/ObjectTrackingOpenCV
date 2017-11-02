@@ -9,7 +9,7 @@ else:
     tracker = cv2.TrackerKCF_create()
  
 # Read video
-video = cv2.VideoCapture("demo-video-single.avi")
+video = cv2.VideoCapture("Video/CarGame.avi")
 #video = cv2.VideoCapture(0)
  
 # Exit if video not opened.
@@ -26,8 +26,6 @@ if not ok:
  
 # Define an initial bounding box
 bbox = (230, 200, 170, 130)
- 
-# Uncomment the line below to select a different bounding box
 #bbox = cv2.selectROI(frame, False)
 
 print(bbox)
