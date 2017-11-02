@@ -8,4 +8,5 @@ OpenCV
 ```
 
 ***For Arch***
-`$sudo pacman -S opencv hdf5'
+
+`$sudo pacman -S opencv hdf5`
