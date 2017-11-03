@@ -3,14 +3,25 @@ import queue
 
 previousFrames = queue.Queue()
 
+Different_Scan = False
+Frames_Number = 0
+
+def init(frameNum):
+    global Different_Scan, Frames_Number
+    Different_Scan = True
+    Frames_Number = frameNum
+
 def update(frame):
-    global previousFrames
+    global previousFrames, Different_Scan, Frames_Number
+    
+    if not Different_Scan:
+        return frame
     
     gray = cv2.cvtColor(frame, cv2.COLOR_BGR2GRAY)
     gray = cv2.GaussianBlur(gray, (21, 21), 0)
     previousFrames.put(gray)
     
-    if previousFrames.qsize() < 5:
+    if previousFrames.qsize() < Frames_Number:
         return frame
     
     previousFrame = previousFrames.get()

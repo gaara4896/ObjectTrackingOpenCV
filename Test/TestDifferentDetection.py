@@ -1,12 +1,11 @@
+import sys
+sys.path.insert(0, '../utils')
 import cv2
-import HumanDetection
+import DifferentTracking
 
-video = cv2.VideoCapture(0)
-HumanDetection.faceInit()
-#HumanDetection.eyeInit()
-HumanDetection.fullBodyInit()
-HumanDetection.upperBodyInit()
-HumanDetection.lowerBodyInit()
+video = cv2.VideoCapture("../Video/CCTV.mp4")
+
+DifferentTracking.init(10)
 
 while video.isOpened():
     timer = cv2.getTickCount()
@@ -14,7 +13,7 @@ while video.isOpened():
     if not ok:
         break
     
-    ok, frame = HumanDetection.update(frame)
+    frame = DifferentTracking.update(frame)
     
     fps = cv2.getTickFrequency() / (cv2.getTickCount() - timer)
     cv2.putText(frame, "FPS : " + str(int(fps)), (100,50), cv2.FONT_HERSHEY_SIMPLEX, 0.75, (50,170,50), 2)

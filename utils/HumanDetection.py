@@ -31,11 +31,10 @@ def lowerBodyInit():
     global Lower_Body_Scan
     Lower_Body_Scan = True
     
-def draw(frame, successFlag, detection):
+def draw(frame, detection):
     for x, y, w, h in detection:
         frame = cv2.rectangle(frame,(x,y),(x+w,y+h),(255,0,0),2)
-        successFlag = True
-    return frame, successFlag
+    return frame
 
 def update(frame):
     global Face_Scan, Eye_Scan, Full_Body_Scan, Upper_Body_Scan, Lower_Body_Scan
@@ -43,16 +42,15 @@ def update(frame):
         return False, frame
     
     gray = cv2.cvtColor(frame, cv2.COLOR_BGR2GRAY)
-    successFlag = False
     if Face_Scan:
-        frame, successFlag = draw(frame, successFlag, face_cascade.detectMultiScale(gray, 1.3, 5))
+        frame = draw(frame, face_cascade.detectMultiScale(gray, 1.3, 5))
     if Eye_Scan:
-        frame, successFlag = draw(frame, successFlag, eye_cascade.detectMultiScale(gray))
+        frame = draw(frame, eye_cascade.detectMultiScale(gray))
     if Full_Body_Scan:
-        frame, successFlag = draw(frame, successFlag, fullbody_cascade.detectMultiScale(gray))
+        frame = draw(frame, fullbody_cascade.detectMultiScale(gray))
     if Upper_Body_Scan:
-        frame, successFlag = draw(frame, successFlag, upperbody_cascade.detectMultiScale(gray))
+        frame = draw(frame, upperbody_cascade.detectMultiScale(gray))
     if Lower_Body_Scan:
-        frame, successFlag = draw(frame, successFlag, lowerbody_cascade.detectMultiScale(gray))
+        frame = draw(frame, lowerbody_cascade.detectMultiScale(gray))
     
-    return successFlag, frame    
+    return frame    
