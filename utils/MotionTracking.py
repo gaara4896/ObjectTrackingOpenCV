@@ -11,17 +11,13 @@ def addTracker(frame, roi):
         tracker = cv2.TrackerKCF_create()
     tracker.init(frame, roi)
     trackers.append(tracker)
+    print("Added Tracker")
         
 def update(frame):
     global trackers
-    successFlag = False
     
     for tracker in trackers:
         ok, trackBox = tracker.update(frame)
         if ok:
-            p1 = (int(trackBox[0]), int(trackBox[1]))
-            p2 = (int(trackBox[0] + trackBox[2]), int(trackBox[1] + trackBox[3]))
-            cv2.rectangle(frame, p1, p2, (0,0,255), 2, 1)
-            successFlag = True
-        
-    return successFlag, frame
+            frame = cv2.rectangle(frame,(int(trackBox[0]),int(trackBox[1])),(int(trackBox[0]+trackBox[2]),int(trackBox[1]+trackBox[3])),(0,0,255),2) 
+    return frame

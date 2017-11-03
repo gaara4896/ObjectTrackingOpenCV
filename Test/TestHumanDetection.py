@@ -2,11 +2,11 @@ import cv2
 import HumanDetection
 
 video = cv2.VideoCapture("../Video/CCTV.mp4")
-#HumanDetection.faceInit()
+HumanDetection.faceInit()
 #HumanDetection.eyeInit()
 #HumanDetection.fullBodyInit()
 #HumanDetection.upperBodyInit()
-HumanDetection.lowerBodyInit()
+#HumanDetection.lowerBodyInit()
 
 while video.isOpened():
     timer = cv2.getTickCount()

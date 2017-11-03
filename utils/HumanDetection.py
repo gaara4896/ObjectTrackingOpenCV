@@ -39,7 +39,7 @@ def draw(frame, detection):
 def update(frame):
     global Face_Scan, Eye_Scan, Full_Body_Scan, Upper_Body_Scan, Lower_Body_Scan
     if not Face_Scan and not Eye_Scan and not Full_Body_Scan and not Upper_Body_Scan and not Lower_Body_Scan:
-        return False, frame
+        return frame
     
     gray = cv2.cvtColor(frame, cv2.COLOR_BGR2GRAY)
     if Face_Scan:
