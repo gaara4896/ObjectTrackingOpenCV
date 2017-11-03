@@ -14,7 +14,7 @@ OpenCV
 ### Usage
 
 ```
-Usage: python MotionDetection.py [<ARGS>...] [-m <Number of Tracker>] [-d <Number of Compare Frames>] [-v <Path>] 
+Usage: python MotionDetection.py [<ARGS>...] [-m <Number of Tracker>] [-d <Number of Compare Frames>] [-v <Path>] [-o <Name>] 
 
 <ARGS>
   -d  Detect Differences Between Frames
@@ -26,13 +26,14 @@ Usage: python MotionDetection.py [<ARGS>...] [-m <Number of Tracker>] [-d <Numbe
   -t  Enable Motion Tracking
   -m  Enable Multiple Motion Tracking
   -v  Play from videos    
-  -w  Play from webcam  
+  -w  Play from webcam    
+  -o  Output to a video   
 ```
 
 ##### Example
 
-`python MotionDetection.py -ftw`
+`python MotionDetection.py -f -t -w`
 
 `python MotionDetection.py -d 5 -v /Video/CCTV.mp4`
 
-`python MotionDetection.py -febw`
+`python MotionDetection.py -febul -m 3 -v Video/Koay.mp4 -o Video/KoayTrack.mp4`
