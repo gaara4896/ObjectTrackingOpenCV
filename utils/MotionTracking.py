@@ -21,7 +21,7 @@ def update(frame):
         if ok:
             p1 = (int(trackBox[0]), int(trackBox[1]))
             p2 = (int(trackBox[0] + trackBox[2]), int(trackBox[1] + trackBox[3]))
-            cv2.rectangle(frame, p1, p2, (255,0,0), 2, 1)
+            cv2.rectangle(frame, p1, p2, (0,0,255), 2, 1)
             successFlag = True
         
     return successFlag, frame

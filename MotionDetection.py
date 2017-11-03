@@ -1,6 +1,6 @@
 import sys
 sys.path.insert(0, 'utils')
-import FaceDetection
+import HumanDetection
 import DifferentTracking
 import MotionTracking
 import cv2
@@ -24,7 +24,7 @@ while True:
     timer = cv2.getTickCount()
     
     motion, frame = MotionTracking.update(frame)
-    face, frame = FaceDetection.update(frame)
+    face, frame = HumanDetection.update(frame)
     
     if not motion and not face:    
         frame = DifferentTracking.update(frame)
