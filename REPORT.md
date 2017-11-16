@@ -1,5 +1,19 @@
 # Object Tracking Report
 
+## Table of content
+
+[Introduction](REPORT.md#Introduction)
+
+[Delegation of tasks](REPORT.md#Delegation-of-tasks)
+
+[Review](REPORT.md#Review)
+
+[Enhancements](REPORT.md#Enhancements)
+
+[Results](REPORT.md#Results)
+
+[Conclusion](REPORT.md#Conclusion)
+
 ## Introduction
 
 The topic is object tracking, which is track the existence of object in a video. Several method are used, which include find the difference between frames, object tracking, and also Haar-Cascades. 
@@ -26,7 +40,7 @@ Tracker algorithm are provide by OpenCV Library [[1]](https://docs.opencv.org/3.
 
 #### KCF
 
-KCF algorithm is an algorithm that take advantages of the properties of circulant matrix to enhance the processing speed. KCF algorithm is an extended implementation of KFC color-names feature[[2]](http://www.robots.ox.ac.uk/~joao/publications/henriques_tpami2015.pdf). KCF is only available for OpenCV 3.1 and above. 
+KCF algorithm is an algorithm that take advantages of the properties of circulant matrix to enhance the processing speed. KCF algorithm is an extended implementation of KFC color-names feature [[2]](http://www.robots.ox.ac.uk/~joao/publications/henriques_tpami2015.pdf). KCF is only available for OpenCV 3.1 and above. 
 
 #### GOTURUN
 
@@ -46,7 +60,7 @@ BOOSTING are the fastest among all, MIL being more accurate than BOOSTING, meanw
 
 ### Track By Difference
 
-One of the way to track object is by comparing the current frame with frame that had previously appeared[[4]](https://www.pyimagesearch.com/2015/05/25/basic-motion-detection-and-tracking-with-python-and-opencv/). This is most useful in usage where the video doesn't move around and the moving obejct are significantly far away from the video. This is done by minus the current frame with the first frame, and hence getting the part that had changed. 
+One of the way to track object is by comparing the current frame with frame that had previously appeared [[4]](https://www.pyimagesearch.com/2015/05/25/basic-motion-detection-and-tracking-with-python-and-opencv/). This is most useful in usage where the video doesn't move around and the moving obejct are significantly far away from the video. This is done by minus the current frame with the first frame, and hence getting the part that had changed. 
 
 ```Python
 #Find different between frame
@@ -171,17 +185,17 @@ Aside from the above 3 major enhancement, we also had a lot of different small e
 
 #### Object Tracking
 
-`python MotionDetection.py -t -v Video/CarGame.avi`
+`$ python MotionDetection.py -t -v Video/CarGame.avi`
 
 #### Multiple Object Tracking
 
-`python MotionDetection.py -m 3 -v Video/CarGame.avi`
+`$ python MotionDetection.py -m 3 -v Video/CarGame.avi`
 
 _Subtitute 3 with the amount of tracker you want_
 
 #### Different Tracking
 
-`python MotionDetection.py -d 10 -v Video/CCTV.mp4`
+`$ python MotionDetection.py -d 10 -v Video/CCTV.mp4`
 
 _Subtitute 10 with the n amount of frame you want to compare back_
 
@@ -189,21 +203,21 @@ _Subtitute 10 with the n amount of frame you want to compare back_
 
 **Eye**
 
-`python MotionDetection.py -e -v Video/Koay.mp4`
+`$ python MotionDetection.py -e -v Video/Koay.mp4`
 
 **Face**
 
-`python MotionDetection.py -f -v Video/Koay.mp4`
+`$ python MotionDetection.py -f -v Video/Koay.mp4`
 
 **Combined**
 
-`python MotionDetection.py -febulw`
+`$ python MotionDetection.py -febulw`
 
 _This include face, eye, fullbody, upperbody, lowerbody and stream from webcam_
 
 #### Output to video
 
-`python MotionDetection.py -t -v Video/CarGame.avi -o Video/Output.avi`
+`$ python MotionDetection.py -t -v Video/CarGame.avi -o Video/Output.avi`
 
 _Add_ `-o ${Name of video}.avi` _to the end of any command to save as video_
 
