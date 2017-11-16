@@ -1,6 +1,6 @@
 import cv2
 
-video = cv2.VideoCapture("Video/CCTV.mp4")
+video = cv2.VideoCapture("../Video/CCTV.mp4")
 #video = cv2.VideoCapture(0)
 
 firstFrame = None
