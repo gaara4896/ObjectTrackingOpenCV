@@ -2,17 +2,17 @@
 
 ## Table of content
 
-[Introduction](REPORT.md#Introduction)
+[1. Introduction](REPORT.md#introduction)
 
-[Delegation of tasks](REPORT.md#Delegation-of-tasks)
+[2. Delegation of tasks](REPORT.md#delegation-of-tasks)
 
-[Review](REPORT.md#Review)
+[3. Review](REPORT.md#review)
 
-[Enhancements](REPORT.md#Enhancements)
+[4. Enhancements](REPORT.md#enhancements)
 
-[Results](REPORT.md#Results)
+[5. Results](REPORT.md#results)
 
-[Conclusion](REPORT.md#Conclusion)
+[6. Conclusion](REPORT.md#onclusion)
 
 ## Introduction
 
@@ -75,6 +75,8 @@ _, cnts, _ = cv2.findContours(thresh.copy(), cv2.RETR_EXTERNAL, cv2.CHAIN_APPROX
 ```
 
 ![DifferentInFrame](image/DifferentInFrame.jpg)
+
+![DifferentInFrameThreshold](image/DifferentInFrameThreshold.jpg)
 
 ### Haar-Cascades
 
